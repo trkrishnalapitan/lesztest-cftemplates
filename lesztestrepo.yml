@@ -1,0 +1,15 @@
+#=======lesztest=only=================
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Simple CloudFormation stack to create a CodeCommit repository
+
+Resources:
+  CodeCommitRepository:
+    Type: AWS::CodeCommit::Repository
+    Properties:
+      RepositoryName: lesztest
+      RepositoryDescription: repo for testing only created by lesz
+
+Outputs:
+  RepositoryName:
+    Description: Name of the CodeCommit repository
+    Value: !Ref CodeCommitRepository
